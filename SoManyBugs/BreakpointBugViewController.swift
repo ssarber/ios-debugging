@@ -81,8 +81,8 @@ extension BreakpointBugViewController {
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if motion == .MotionShake { disperseBugsAnimation() }
     }
-    func handleSingleTap(recognizer: UITapGestureRecognizer) { addBugToView()
+    func handleSingleTap(recognizer: UITapGestureRecognizer) {
+        addBugToView()
         addBugToView()
     }
 }
-

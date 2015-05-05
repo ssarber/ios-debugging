@@ -84,3 +84,52 @@ extension FinalBugViewController {
     func handleSingleTap(recognizer: UITapGestureRecognizer) { addBugToView() }
 }
 
+// MARK: - Printable and DebugPrintable
+
+extension FinalBugViewController: Printable, DebugPrintable {
+    
+    override var description: String {
+        return "FinalBugViewController contains \(bugs.count) bugs\n"
+    }
+    
+    override var debugDescription: String {
+        var index = 0
+        var debugString = "FinalBugViewController contains \(bugs.count) bugs...\n"
+        for bug in bugs {
+            debugString = debugString + "Bug\(index): \(bug.frame)\n"
+            index += 1
+        }
+        return debugString
+    }
+}
+
+// MARK: - debugQuickLookObject
+
+extension FinalBugViewController {
+    
+    func debugQuickLookObject() -> AnyObject? {
+        
+        let singleSquareLength: CGFloat = 10.0
+        let squaresInRow = 10
+        let imageSize = CGSizeMake(singleSquareLength * CGFloat(squaresInRow), singleSquareLength * CGFloat(bugs.count / squaresInRow + 1))
+        
+        UIGraphicsBeginImageContextWithOptions(imageSize, true, 0)
+        var x: CGFloat = 0.0
+        var y: CGFloat = 0.0
+        for bug in bugs {
+            bug.tintColor.set()
+            UIRectFill(CGRectMake(x, y, singleSquareLength, singleSquareLength))
+            x += singleSquareLength
+            if x > CGFloat(squaresInRow) * singleSquareLength {
+                y += singleSquareLength
+                x = 0.0
+            }
+        }
+        UIColor.yellowColor().set()
+        UIRectFill(CGRectMake(x, y, singleSquareLength, singleSquareLength))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+}

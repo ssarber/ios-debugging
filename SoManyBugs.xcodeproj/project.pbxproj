@@ -10,8 +10,6 @@
 		A90A41971AE1B93E0001724B /* settings.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A90A41961AE1B93E0001724B /* settings.pdf */; };
 		A915DD8A1AE56FF4003C9DBB /* BreakpointBugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915DD821AE56FF4003C9DBB /* BreakpointBugViewController.swift */; };
 		A915DD8B1AE56FF4003C9DBB /* BreakpointSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915DD831AE56FF4003C9DBB /* BreakpointSettingsViewController.swift */; };
-		A915DD8C1AE56FF4003C9DBB /* LLDBBugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915DD841AE56FF4003C9DBB /* LLDBBugViewController.swift */; };
-		A915DD8D1AE56FF4003C9DBB /* LLDBSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915DD851AE56FF4003C9DBB /* LLDBSettingsViewController.swift */; };
 		A915DD8E1AE56FF4003C9DBB /* PrintBugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915DD861AE56FF4003C9DBB /* PrintBugViewController.swift */; };
 		A915DD8F1AE56FF4003C9DBB /* PrintSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915DD871AE56FF4003C9DBB /* PrintSettingsViewController.swift */; };
 		A915DD901AE56FF4003C9DBB /* VisualBugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915DD881AE56FF4003C9DBB /* VisualBugViewController.swift */; };
@@ -44,8 +42,6 @@
 		A90A41961AE1B93E0001724B /* settings.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = settings.pdf; path = Images/settings.pdf; sourceTree = "<group>"; };
 		A915DD821AE56FF4003C9DBB /* BreakpointBugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakpointBugViewController.swift; sourceTree = "<group>"; };
 		A915DD831AE56FF4003C9DBB /* BreakpointSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakpointSettingsViewController.swift; sourceTree = "<group>"; };
-		A915DD841AE56FF4003C9DBB /* LLDBBugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDBBugViewController.swift; sourceTree = "<group>"; };
-		A915DD851AE56FF4003C9DBB /* LLDBSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDBSettingsViewController.swift; sourceTree = "<group>"; };
 		A915DD861AE56FF4003C9DBB /* PrintBugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintBugViewController.swift; sourceTree = "<group>"; };
 		A915DD871AE56FF4003C9DBB /* PrintSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintSettingsViewController.swift; sourceTree = "<group>"; };
 		A915DD881AE56FF4003C9DBB /* VisualBugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualBugViewController.swift; sourceTree = "<group>"; };
@@ -102,15 +98,6 @@
 				A915DD891AE56FF4003C9DBB /* VisualSettingsViewController.swift */,
 			);
 			name = Visual;
-			sourceTree = "<group>";
-		};
-		A915DD7F1AE56F27003C9DBB /* LLDB */ = {
-			isa = PBXGroup;
-			children = (
-				A915DD841AE56FF4003C9DBB /* LLDBBugViewController.swift */,
-				A915DD851AE56FF4003C9DBB /* LLDBSettingsViewController.swift */,
-			);
-			name = LLDB;
 			sourceTree = "<group>";
 		};
 		A915DD801AE56F2D003C9DBB /* Print */ = {
@@ -206,7 +193,6 @@
 			children = (
 				A915DD801AE56F2D003C9DBB /* Print */,
 				A915DD811AE56F31003C9DBB /* Breakpoint */,
-				A915DD7F1AE56F27003C9DBB /* LLDB */,
 				A915DD7E1AE56F22003C9DBB /* Visual */,
 				A915DD7D1AE56F1C003C9DBB /* Final */,
 			);
@@ -318,8 +304,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9FC44841AE1D812009C5144 /* BugFactory.swift in Sources */,
-				A915DD8C1AE56FF4003C9DBB /* LLDBBugViewController.swift in Sources */,
-				A915DD8D1AE56FF4003C9DBB /* LLDBSettingsViewController.swift in Sources */,
 				A9FC447F1AE1C7EB009C5144 /* FinalSettingsViewController.swift in Sources */,
 				A9FC447D1AE1C215009C5144 /* UIColor+BugTheme.swift in Sources */,
 				A915DD8E1AE56FF4003C9DBB /* PrintBugViewController.swift in Sources */,

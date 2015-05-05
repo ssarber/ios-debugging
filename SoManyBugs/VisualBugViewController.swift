@@ -81,3 +81,34 @@ extension VisualBugViewController {
     func handleSingleTap(recognizer: UITapGestureRecognizer) { addBugToView() }
 }
 
+
+// MARK: - debugQuickLookObject
+
+extension VisualBugViewController {
+    
+    func debugQuickLookObject() -> AnyObject? {
+
+        let singleSquareLength: CGFloat = 10.0
+        let squaresInRow = 10
+        let imageSize = CGSizeMake(singleSquareLength * CGFloat(squaresInRow), singleSquareLength * CGFloat(bugs.count / squaresInRow + 1))
+
+        UIGraphicsBeginImageContextWithOptions(imageSize, true, 0)
+        var x: CGFloat = 0.0
+        var y: CGFloat = 0.0
+        for bug in bugs {
+            bug.tintColor.set()
+            UIRectFill(CGRectMake(x, y, singleSquareLength, singleSquareLength))
+            x += singleSquareLength
+            if x > CGFloat(squaresInRow) * singleSquareLength {
+                y += singleSquareLength
+                x = 0.0
+            }
+        }
+        UIColor.yellowColor().set()
+        UIRectFill(CGRectMake(x, y, singleSquareLength, singleSquareLength))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+}
