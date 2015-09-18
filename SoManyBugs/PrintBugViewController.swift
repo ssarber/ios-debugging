@@ -30,11 +30,11 @@ class PrintBugViewController: UIViewController {
     // MARK: - Bug Functions
     
     func addBugToView() {
-        println("addBugToView reached")
-        println("Bug count begin: \(bugs.count)")
+        print("addBugToView reached")
+        print("Bug count begin: \(bugs.count)")
         if bugs.count < maxBugs {
             let newBug = bugFactory.createBug()
-            println(newBug)
+            print(newBug)
             bugs.append(newBug)
             view.addSubview(newBug)
             moveBugsAnimation()
@@ -81,16 +81,16 @@ class PrintBugViewController: UIViewController {
 
 extension PrintBugViewController {
     override func canBecomeFirstResponder() -> Bool { return true }
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake { disperseBugsAnimation() }
     }
     func handleSingleTap(recognizer: UITapGestureRecognizer) {
-        println("handleSingleTap reached")
+        print("handleSingleTap reached")
         addBugToView()
     }
 }
 
-extension PrintBugViewController : Printable, DebugPrintable {
+extension PrintBugViewController {
     
     override var description: String {
         return "PrintBugViewController contains \(bugs.count) bugs\n"

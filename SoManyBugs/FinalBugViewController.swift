@@ -78,7 +78,7 @@ class FinalBugViewController: UIViewController {
 
 extension FinalBugViewController {
     override func canBecomeFirstResponder() -> Bool { return true }
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake { disperseBugsAnimation() }
     }
     func handleSingleTap(recognizer: UITapGestureRecognizer) { addBugToView() }
@@ -86,7 +86,7 @@ extension FinalBugViewController {
 
 // MARK: - Printable and DebugPrintable
 
-extension FinalBugViewController: Printable, DebugPrintable {
+extension FinalBugViewController: CustomDebugStringConvertible {
     
     override var description: String {
         return "FinalBugViewController contains \(bugs.count) bugs\n"

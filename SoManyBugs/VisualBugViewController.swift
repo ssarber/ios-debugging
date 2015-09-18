@@ -75,7 +75,7 @@ class VisualBugViewController: UIViewController {
 
 extension VisualBugViewController {
     override func canBecomeFirstResponder() -> Bool { return true }
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake { disperseBugsAnimation() }
     }
     func handleSingleTap(recognizer: UITapGestureRecognizer) { addBugToView() }

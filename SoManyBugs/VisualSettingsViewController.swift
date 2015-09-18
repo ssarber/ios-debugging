@@ -27,7 +27,7 @@ class VisualSettingsViewController: UIViewController {
     @IBAction func dismissSettingsTouched(sender: AnyObject) { self.dismissViewControllerAnimated(true, completion: nil) }
     
     @IBAction func bugTypeSelected(sender: UIButton) {
-        bugFactory.currentBugType = BugFactory.BugType(rawValue: sender.currentTitle!.toInt()!)!
+        bugFactory.currentBugType = BugFactory.BugType(rawValue: Int(sender.currentTitle!)!)!
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
